@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ScoreBoard</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="simulate.js"></script>
+    <script src="app.js"></script>
+</head>
+ 
+<body>
+<!--the instruction set-->
+<div class="row">
+    <div class="col-md-8">
+        <h1 align="center" style="margin: 10px auto">
+            Scoreboard algorithm simulator
+        </h1>
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-success" id="continue" style="margin-top: 20px">
+           Continue
+        </button>
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-warning" id="pause" style="margin-top: 20px">
+           Stop
+        </button>
+    </div>
+</div>
+<hr style="margin: 20px auto">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6" style="height: 350px; overflow: auto">
+            <table class="table table-hover">
+                <h3 align="center"> Instruction Status </h3>
+                <thead>
+                    <tr>
+                        <th class="col-md-4">Instruction</th>
+                        <th class="col-md-2">Issue</th>
+                        <th class="col-md-2">Operand</th>
+                        <th class="col-md-2">Excution</th>
+                        <th class="col-md-2">Write</th>
+                    </tr>
+                </thead>
+                <tbody id="instruction_table">
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h3 align="center"> Registers Status </h3>
+            <div class="row">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>R0</th> <th>R1</th> <th>R2</th> <th>R3</th>
+                            <th>R4</th> <th>R5</th> <th>R6</th> <th>R7</th>
+                            <th>R8</th> <th>R9</th> <th>R10</th> <th>R11</th>
+                            <th>R12</th> <th>R13</th> <th>R14</th> <th>R15</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="R0"></td> <td id="R1"></td> <td id="R2"></td>
+                            <td id="R3"></td> <td id="R4"></td> <td id="R5"></td>
+                            <td id="R6"></td> <td id="R7"></td> <td id="R8"></td>
+                            <td id="R9"></td> <td id="R10"></td> <td id="R11"></td>
+                            <td id="R12"></td> <td id="R13"></td> <td id="R14"></td>
+                            <td id="R15"></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>R16</th> <th>R17</th> <th>R18</th> <th>R19</th>
+                            <th>R20</th> <th>R21</th> <th>R22</th> <th>R23</th>
+                            <th>R24</th> <th>R25</th> <th>R26</th> <th>R27</th>
+                            <th>R28</th> <th>R29</th> <th>R30</th> <th>R31</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="R16"></td> <td id="R17"></td> <td id="R18"></td>
+                            <td id="R19"></td> <td id="R20"></td> <td id="R21"></td>
+                            <td id="R22"></td> <td id="R23"></td> <td id="R24"></td>
+                            <td id="R25"></td> <td id="R26"></td> <td id="R27"></td>
+                            <td id="R28"></td> <td id="R29"></td> <td id="R30"></td>
+                            <td id="R31"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>F0</th> <th>F1</th> <th>F2</th> <th>F3</th>
+                            <th>F4</th> <th>F5</th> <th>F6</th> <th>F7</th>
+                            <th>F8</th> <th>F9</th> <th>F10</th> <th>F11</th>
+                            <th>F12</th> <th>F13</th> <th>F14</th> <th>F15</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="F0"></td> <td id="F1"></td> <td id="F2"></td>
+                            <td id="F3"></td> <td id="F4"></td> <td id="F5"></td>
+                            <td id="F6"></td> <td id="F7"></td> <td id="F8"></td>
+                            <td id="F9"></td> <td id="F10"></td> <td id="F11"></td>
+                            <td id="F12"></td> <td id="F13"></td> <td id="F14"></td>
+                            <td id="F15"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>F16</th> <th>F17</th> <th>F18</th> <th>F19</th>
+                            <th>F20</th> <th>F21</th> <th>F22</th> <th>F23</th>
+                            <th>F24</th> <th>F25</th> <th>F26</th> <th>F27</th>
+                            <th>F28</th> <th>F29</th> <th>F30</th> <th>F31</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="F16"></td> <td id="F17"></td> <td id="F18"></td>
+                            <td id="F19"></td> <td id="F20"></td> <td id="F21"></td>
+                            <td id="F22"></td> <td id="F23"></td> <td id="F24"></td>
+                            <td id="F25"></td> <td id="F26"></td> <td id="F27"></td>
+                            <td id="F28"></td> <td id="F29"></td> <td id="F30"></td>
+                            <td id="F31"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 align="center"> Calculate Unit </h3>
+<div class="row" style="min-height: 300px">
+    <div class="col-md-8 col-md-offset-2">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Busy</th>
+                    <th>Op</th>
+                    <th>Fi</th>
+                    <th>Fj</th>
+                    <th>Fk</th>
+                    <th>Qj</th>
+                    <th>Qk</th>
+                    <th>Rj</th>
+                    <th>Rk</th>
+                </tr>
+            </thead>
+            <tbody id="function_unit">
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr style="margin:30px auto">
+<div class="row">
+    <div class="col-md-4 col-md-offset-1">
+        <div class="row">
+            <h3 align="center">Unloaded Instructions </h3>
+        </div>
+        <div class="row" style="border: 1px solid; height: 300px; overflow: auto;" id="all_instructions">
+        </div>
+    </div>
+    <div class="col-md-4 col-md-offset-2">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 align="center">New Instructions</h3>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-success" style="margin-top:20px" id="load">Load</button>
+            </div>
+        </div>
+        <div class="row">
+            <textarea  neme="textarea" style="width: 100%; height: 300px; margin: auto" id="new_instructions"></textarea>
+        </div>
+    </div>
+</div>
+</body>
+</html>
