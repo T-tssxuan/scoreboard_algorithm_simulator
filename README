@@ -1,3 +1,30 @@
-socreboard simulator
+scoreboard simulator usage
 1.open the index.html with modern browser
 2.input the instructions that you need to execute
+
+scoreboard simulator project
+.
+├── README  
+├── app.js  //the controller of the project, which responsible for forward the
+|           //simulator and updata the UI
+├── bootstrap 
+│   ├── css
+│   │   ├── bootstrap-theme.css
+│   │   ├── bootstrap-theme.css.map
+│   │   ├── bootstrap-theme.min.css
+│   │   ├── bootstrap.css
+│   │   ├── bootstrap.css.map
+│   │   └── bootstrap.min.css
+│   ├── fonts
+│   │   ├── glyphicons-halflings-regular.eot
+│   │   ├── glyphicons-halflings-regular.svg
+│   │   ├── glyphicons-halflings-regular.ttf
+│   │   ├── glyphicons-halflings-regular.woff
+│   │   └── glyphicons-halflings-regular.woff2
+│   └── js
+│       ├── bootstrap.js
+│       ├── bootstrap.min.js
+│       └── npm.js
+├── index.html //the view of the project, the main frame of the application
+├── jquery-2.1.4.min.js 
+└── simulate.js  //the engine of the scoreboard algorithm simulator.
